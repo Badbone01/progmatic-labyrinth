@@ -19,26 +19,28 @@ public class RandomPlayer implements Player {
 
         Direction direction = null;
 
-        do {
-            switch ((int) (Math.random() * 4)) {
-                case 0:
-                    direction = NORTH;
-                    break;
-                case 1:
-                    direction = WEST;
-                    break;
-                case 2:
-                    direction = SOUTH;
-                    break;
-                case 3:
-                    direction = EAST;
-                    break;
-            }
-            if (l.possibleMoves().contains(direction)){
-                return direction;
-            }
-        } while (1 == 1);
+
+        switch ((int) (Math.random() * 4)) {
+            case 0:
+                direction = NORTH;
+                break;
+            case 1:
+                direction = WEST;
+                break;
+            case 2:
+                direction = SOUTH;
+                break;
+            case 3:
+                direction = EAST;
+                break;
+        }
+        if (l.possibleMoves().contains(direction)) {
+            return direction;
+        }
+
+        return direction;
     }
+
 }
 
 
